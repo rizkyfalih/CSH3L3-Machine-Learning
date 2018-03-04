@@ -61,3 +61,4 @@ regressor_OLS.summary()
 x_opt = x[:,[0, 3]]
 regressor_OLS = sm.OLS(endog = y, exog = x_opt).fit()
 regressor_OLS.summary()
+
