@@ -11,12 +11,12 @@ dataset = pd.read_csv('Restaurant_Reviews.tsv', delimiter = '\t', quoting = 3)
 # Cleaning the texts
 import re
 import nltk
-nltk.download('stopwords')
+#nltk.download('stopwords')
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 corpus = []
 for i in range(0, 1000):
-    review = re.sub('[^a-zA-Z]', ' ', dataset['Review'][i])
+    review = re.sub('[^a-zA-Z]', ' ', dataset['Review'][i]) #don't remove a-z, A-Z
     review = review.lower()
     review = review.split()
     ps = PorterStemmer()
@@ -32,11 +32,11 @@ y = dataset.iloc[:, 1].values
 
 # Splitting the dataset into the Training set and Test set
 from sklearn.cross_validation import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state = 0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.10, random_state = 0)
 
 # Fitting Naive Bayes to the Training set
-from sklearn.naive_bayes import GaussianNB
-classifier = GaussianNB()
+from sklearn.naive_bayes import MultinomialNB
+classifier = MultinomialNB()
 classifier.fit(X_train, y_train)
 
 # Predicting the Test set results

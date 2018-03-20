@@ -7,6 +7,8 @@ Created on Fri Mar  9 08:02:59 2018
 
 # Kernel SVM
 
+# The Concept from Machine Learning A-Z™: Hands-On Python & R In Data Science
+
 # Importing the libraries
 import numpy as np
 import matplotlib.pyplot as plt
