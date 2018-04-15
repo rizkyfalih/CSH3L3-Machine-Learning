@@ -106,3 +106,11 @@ outputData['label'] = outputData['label'].astype(np.int64)
 print ('After Classification')
 
 print (outputData)
+
+
+z1 = dataTrain.loc[1, 'att1':'att3']
+z2 = dataTrain.loc[:, 'att1':'label']
+
+sigmas = {0:1, 1:1, 2:1}
+z3 = patternLayer(z1, z2, sigmas)
+print(z3)

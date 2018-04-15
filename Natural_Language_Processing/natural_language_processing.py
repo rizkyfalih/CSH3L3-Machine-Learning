@@ -26,7 +26,7 @@ for i in range(0, 1000):
 
 # Creating the Bag of Words model
 from sklearn.feature_extraction.text import CountVectorizer
-cv = CountVectorizer(max_features = 1500)
+cv = CountVectorizer()
 X = cv.fit_transform(corpus).toarray()
 y = dataset.iloc[:, 1].values
 
@@ -45,3 +45,7 @@ y_pred = classifier.predict(X_test)
 # Making the Confusion Matrix
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
+
+from sklearn.metrics import accuracy_score
+accuracy2 = accuracy_score(y_test, y_pred)
+print("Accuracy Naive Bayes = " + str(accuracy2))
