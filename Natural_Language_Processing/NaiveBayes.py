@@ -45,8 +45,9 @@ X_train.append(['Chinese', 'Beijing', 'Chinese'])
 X_train.append(['Chinese', 'Chinese', 'Shanghai'])
 X_train.append(['Chinese', 'Macao'])
 X_train.append(['Tokyo', 'Japan', 'Chinese'])
+X_train.append(['Indonesia', 'Indo'])
 
-y_train = ['c','c','c','j']
+y_train = ['c','c','c','j', 'i']
 
 label_list = list(set(y_train))
 
@@ -61,7 +62,8 @@ print(word_list)
 
 likelihood = likelihood_probability(X_train, y_train, word_list, label_list)
 
-test = ['Chinese', 'Chinese', 'Chinese', 'Tokyo', 'Japan']
+
+test = ['Chinese', 'Chinese', 'Chinese', 'Tokyo', 'Japan', 'Indonesia']
 
 result = []
 for i in range(len(label_list)):
